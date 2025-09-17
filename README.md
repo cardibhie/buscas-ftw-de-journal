@@ -1,88 +1,55 @@
-
-# FTW Data Engineering Journal Template
-
-A minimal learning journal for a **4-Saturday Data Engineering Bootcamp**.  
-
-Use it to capture learnings, reflections, vocabulary, and the **DE mindset** — especially for documenting, communicating, and presenting.
+# Day 1 – SQL & ELT Basics  
+📅 2025-09-13  
 
 ---
 
-## 🚀 Getting Started
+## 📝 Session Notes
 
-Click **Use this template** (top-right on GitHub) to create your own copy.  
-Or clone and rename:
+### Foundations of Data Engineering
+- DE = combines skills from SWE, DevOps, DBA, and Analysts.  
+- Why DE matters: higher digital maturity → more data → higher DE demand.  
+- Not just pipelines, but **trust, scalability, usability**.  
 
-```bash
-git clone https://github.com/ogbinar/ftw-de-journal.git
-````
+### Hands-On w/ Data Pipelines
+- Tools introduced: **dlt**, **dbt**, **ClickHouse**, **DBeaver**, **Metabase**.  
+- Local + remote setups (personal laptop + shared AWS server).  
+- Dataset: **Auto MPG**.  
 
----
+### First Steps in SQL
+- The “Big 6”: SELECT, FROM, WHERE, GROUP BY, HAVING, ORDER BY.  
+- OLTP vs OLAP → row vs column storage.  
+- Ran first SQL queries in ClickHouse.  
 
-## 📝 How to Use
+### Data Quality & Cleaning
+- Raw data = messy → must be cleaned before use.  
+- Stages: **Raw (bronze) → Clean (silver) → Mart (gold)**.  
+- Cleaning: NULL handling, type casting, standardization.  
+- dbt used to enforce transformations + tests.  
 
-1. **Create an entry** for each session:
-
-   * Copy `templates/entry.md` to `journal/YYYY-MM-DD-topic.md`
-   * Example: `journal/2025-09-13-day1.md`
-
-2. **Write during/after class** (10–15 mins is fine).
-
-3. **Commit small & often**:
-
-   ```bash
-   git add . 
-   git commit -m "Add Day 1 notes"
-   git push
-   ```
-or you can also use [github.dev](https://docs.github.com/en/codespaces/the-githubdev-web-based-editor).
-
-4. **Present from your journal** in standups/demos.
+### Visualization
+- Used **Metabase** to explore data.  
+- Built scatter plot: **Horsepower vs MPG**.  
+- Visualization = bridge between queries & insights.  
 
 ---
 
-## 📚 Learn Markdown
-
-This journal uses [Markdown](https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax) — a simple way to format text on GitHub.
-Learning Markdown will make your notes cleaner and easier to read (headings, bullets, tables, code blocks, etc.).
-
-Quick examples:
-
-```markdown
-# Heading 1
-## Heading 2
-- Bullet point
-- **Bold** and *italic*
-`inline code`
-```
+## 🎯 Key Takeaways
+- **Pipeline mindset**: raw → clean → mart.  
+- SQL is the foundation of DE.  
+- Cleaning is not optional — it’s part of the pipeline.  
+- Visualization helps tell a story with data.  
 
 ---
 
-## 📂 Suggested File Naming
-
-```
-journal/
-  2025-09-13-day1.md
-  2025-09-20-day2.md
-  2025-09-27-day3.md
-  2025-10-04-day4.md
-```
-
+## ✨ Reflection
+- Easiest: Writing simple SQL queries (SELECT, ORDER BY).  
+- Hardest: Understanding pipeline architecture (raw-clean-mart separation).  
+- Surprised by: How much LLMs can support learning (but require reflection).  
+- TIL words: OLAP, ClickHouse, dbt, dlt.
+  
 ---
 
-## 🧠 Data Engineering Mindset (keep visible)
-
-* **Raw stays raw** → Clean → **Mart** (separate layers).
-* **Reproducible**: scripts/configs over manual steps.
-* **Document assumptions & decisions** (why, not just what).
-* **Communicate clearly**: inputs, outputs, owners, SLAs.
-* **Small changes**: atomic commits; test + verify.
-* **Observe & log**: data quality, lineage, and failure points.
-
----
-
-## 🎤 Presenting with This Journal
-
-* Start with **context** (dataset, goal, constraints).
-* Show a **diagram** (even a quick sketch) of flow (Raw → Clean → Mart).
-* Call out **trade-offs** (cost, freshness, complexity).
-* End with **next steps** + **open questions**.
+## 📌 Next Steps
+- Practice SQL queries with Auto MPG dataset.  
+- Build a clean layer in dbt.  
+- Try more visualizations in Metabase.  
