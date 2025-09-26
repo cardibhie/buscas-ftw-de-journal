@@ -118,7 +118,7 @@ query  here
 query  here
 ```
 
-**4. Employee performance (sales reps)**
+**4. Employee sales performance**
 ```
 query  here
 ```
@@ -128,6 +128,19 @@ query  here
 ```
 query  here
 ```
+
+**6.Regional Pricing Insights**
+
+```
+query  here
+```
+**CHALLENGE: TOP ARTIST PER QUARTER**
+
+```
+query  here
+```
+## TEAM PROCESS 
+![team process](../assets/meme2.jpg)
 
 
 
