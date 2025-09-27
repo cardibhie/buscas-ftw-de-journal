@@ -111,8 +111,6 @@ We design fact and dimension tables.
 
 **1. Top revenue by genre per country**
 ```
--- Top Revenue by Genre per Country
-DROP TABLE IF EXISTS mart.Item_1_Group_1;
 CREATE TABLE mart.Top_Revenue_by_Genre_per_Country_Group_1
 ENGINE = MergeTree
 ORDER BY tuple()
@@ -127,7 +125,7 @@ FROM (
     FROM mart.FactInvoiceLine_Royce f
     JOIN mart.DimCustomer_Royce c ON f.CustomerKey = c.CustomerKey
     JOIN mart.DimTrack_Royce t ON f.TrackKey = t.TrackKey
-    JOIN mart.DimGenre_Royce g ON t.GenreKey = g.GenreKey
+    JOIN mart.DimGenre_Royce g ON f.GenreKey = g.GenreKey
     GROUP BY c.country, g.GenreName
 ) AS ranked
 WHERE genre_rank = 1
