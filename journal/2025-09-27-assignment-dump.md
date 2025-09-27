@@ -266,7 +266,29 @@ ORDER BY c.country, AvgPrice DESC;
 **CHALLENGE: TOP ARTIST PER QUARTER**
 
 ```
-
+CREATE TABLE mart.Challenge_1_Group_1
+ENGINE = MergeTree
+ORDER BY tuple()
+AS
+SELECT
+    Year,
+    Quarter,
+    ArtistName,
+    TotalUnitsSold
+FROM (
+        SELECT
+            d.Year AS Year,
+            d.Quarter AS Quarter,
+            t.ArtistName AS ArtistName,
+            SUM(f.Quantity) AS TotalUnitsSold,
+            ROW_NUMBER() OVER (PARTITION BY Year, Quarter ORDER BY TotalUnitsSold DESC) AS rank
+        FROM mart.FactInvoiceLine_Royce f
+        JOIN mart.DimTrack_Royce t ON f.TrackKey = t.TrackKey
+        JOIN mart.DimDate_Royce d ON f.InvoiceDate = d.Date
+        GROUP BY Year, Quarter, ArtistName
+) AS ranked
+WHERE rank = 1
+ORDER BY Year, Quarter;
 ```
 ## TEAM PROCESS 
 ![team process](../assets/team_process.png)
